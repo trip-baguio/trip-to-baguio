@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ37F5gd8b8nXolnPKz0BGvA01HZ4GrYI&libraries=places"></script>
+  <script type="module" src="js/index.js"></script>
+
+  <title>Trip to Baguio</title>
+</head>
+
+<body>
+  <section class="modal" id="search-modal">
+   
+  </section>
+  <header>
+    <div class="header-box">
+    <div style="width: 700px; display: flex;">
+      <form id="init-formz" style="display: flex; justify-content: center; align-items: center; margin-left: 15px;">
+      <div class="input-date-container">
+        <label for="start-date">From: </label>
+        <input type="date" name="start-date" id="start-date"
+         required>
+        <label for="end-date">To: </label>
+        <input type="date" name="end-date" id="end-date"
+         required>
+      </div>
+      <button id="search-submit">Start Exploring</button>
+    </form>
+  </div>
+    <div class="logo">
+      <img src="./public/TripToBaguio.png" style="width: 50px;"/>
+      <span>Trip to Baguio</span>
+    </div>
+  </div> 
+  </header>
+  <main class="main-container">
+    <section class="planner-container">
+      <div class="planner-content">
+        <div class="planner-box bucket" style="margin-top: 10px;">
+          <div class="title"><p>Added Locations</p></div>
+          <div class="planner-list"></div>
+        </div>
+      </div>
+    </section>
+    <section class="place-container">
+      <div class="place-overview">
+        <div class="place-filter">
+          <div class="filter-buttons">
+            <li class="filter-li" id="see"><a class="btn btn-blue" href="#"><i class="material-icons">local_see</i>Site</a></li>
+            <li class="filter-li" id="hotel"><a class="btn btn-yellow" href="#"><i class="material-icons">local_hotel</i>Hotel</a></li>
+            <li class="filter-li" id="mall"><a class="btn btn-green" href="#"><i class="material-icons">local_mall</i>Shop</a></li>
+            <li class="filter-li" id="dining"><a class="btn btn-orange" href="#"><i class="material-icons">local_dining</i>Food</a></li>
+            <li class="filter-li" id="cafe"><a class="btn btn-purple" href="#"><i class="material-icons">local_cafe</i>Cafe</a></li>
+            <li class="filter-li" id="bar"><a class="btn btn-pink" href="#"><i class="material-icons">local_bar</i>Drinks</a></li>
+          </div>
+          <div class="action-links" id="filter-actions">
+            <a id="clear-filter" class="button-custom clearz">Clear</a>
+            <a id="apply-filter" class="button-custom apply">Apply</a>
+          </div>
+        </div>
+        <div id="place-num"></div>
+        <div class="place-list"></div>
+      </div>
+    </section>
+    <div id="map" style="height: 90%;"></div>
+  </main>
+</body>
+</html>

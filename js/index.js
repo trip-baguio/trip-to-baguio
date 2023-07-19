@@ -1,6 +1,7 @@
 import { elements } from "./modules/elements.js";
 import * as map from "./modules/Map.js";
 import * as planner from "./modules/Planner.js";
+import { placelocations } from "./modules/Map.js";
 
 export const PLACE_TYPES = {
   see: "tourist_attraction",

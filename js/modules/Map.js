@@ -90,6 +90,7 @@ let map;
 let service;
 let directionsService;
 let directionsRenderer;
+export const placelocations = [];
 const places = {};
 const markers = {};
 
@@ -202,6 +203,14 @@ export function createCard(type) {
     const imgSrc = getPlaceCardImg(place);
     const starPercentageRounded = ratingCalc(place.rating);
     const userRatings = getPlaceCardRating(place);
+    const locationdetail = {
+      name: place.name,
+      lat: place.geometry.location.lat,
+      lng: place.geometry.location.lng
+    }
+    placelocations.push(locationdetail)
+    //for checking of contents of placelocations
+    // console.log(placelocations)
 
     const placeCard = document.createElement("div");
     placeCard.className = "place-card";
@@ -298,7 +307,14 @@ async function showPlaceDetails(place, type) {
   const placeDetails = document.createElement("div");
   placeDetails.className = "place-details";
   placeDetails.id = result.place_id;
-
+  
+  // const locationdetail = {
+  //     name: place.name,
+  //     lat: place.geometry.location.lat,
+  //     lng: place.geometry.location.lng
+  //   }
+  //   placelocations.push(locationdetail)
+  // console.log(placelocations)
   if (result.photos) {
     placeDetails.innerHTML += getPlaceHeroPhoto(result.photos[0]);
     if (result.photos.length > 1) {
